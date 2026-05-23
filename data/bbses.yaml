@@ -1,0 +1,163 @@
+# C64U BBS Directory — community-maintained data file.
+# Submissions land here via PRs against this file.
+#
+# Schema (zod-validated at build time, see lib/bbses.ts):
+#   slug:               url-safe identifier
+#   name:               display name
+#   host:               telnet hostname or IP
+#   port:               telnet port (usually 23, 64xx range, or 6400)
+#   sysop:              (optional) sysop handle
+#   established:        (optional) year established
+#   description:        markdown ok
+#   terminal_modes:     subset of [ANSI-40, ANSI-wide, VT102, VT102-wide,
+#                                  Standard-40, Standard-80, Std-80-wide,
+#                                  Commodore, VT52]
+#                       — these match BVTerm 2026 / Striketerm's T picker
+#   baud_recommended:   2400 | 9600 | 38400
+#   tags:               free-text list (games, chat, files, scene, ansi-art,
+#                                       door-games, c64-software, mods, etc.)
+#   ansi_style:         petscii | ascii | ansi | mixed
+#   country:            ISO-3166 code
+#   homepage:           (optional) BBS web page if any
+#   submitted_by:       (optional) handle of submitter
+
+bbses:
+  - slug: particles
+    name: Particles!
+    host: bbs.particlesbbs.dyndns.org
+    port: 6400
+    sysop: hagen
+    established: 1992
+    description: |
+      Long-running Commodore-focused BBS. Active scene presence, lots of
+      C64/128 software exchange, sysop-coded door games, and a Commodore-
+      friendly user base. Excellent for testing 80-col ANSI terminals
+      since it explicitly supports ANSI-wide.
+    terminal_modes: [ANSI-wide, ANSI-40, VT102-wide, Commodore]
+    baud_recommended: 38400
+    tags: [scene, c64-software, door-games, chat, files]
+    ansi_style: ansi
+    country: US
+    homepage: https://particlesbbs.dyndns.org
+    submitted_by: bvterm-seed
+
+  - slug: cottonwood
+    name: Cottonwood BBS
+    host: cottonwoodbbs.dyndns.org
+    port: 6502
+    sysop: jbevren
+    established: 1996
+    description: |
+      Commodore-friendly multi-line BBS with deep file libraries and
+      active sysop. Strong ANSI art presence; recommended for users who
+      want the classic late-90s/early-2000s C64 BBS experience.
+    terminal_modes: [ANSI-wide, ANSI-40, VT102, Commodore]
+    baud_recommended: 38400
+    tags: [scene, c64-software, files, chat]
+    ansi_style: ansi
+    country: US
+    submitted_by: bvterm-seed
+
+  - slug: commodorenetwork
+    name: The Commodore Network BBS
+    host: bbs.commodore.network
+    port: 6400
+    sysop: snake
+    established: 2014
+    description: |
+      Modern Commodore-community BBS, telnet-first. Designed for retro
+      hardware users including C64U. Active door games, message bases,
+      and a forgiving learning curve for first-time BBSers.
+    terminal_modes: [ANSI-wide, ANSI-40]
+    baud_recommended: 38400
+    tags: [chat, door-games, c64-software, beginner-friendly]
+    ansi_style: ansi
+    country: AU
+    homepage: https://www.commodore.network
+    submitted_by: bvterm-seed
+
+  - slug: borderline
+    name: BorderLine BBS
+    host: bbs.borderlinebbs.duckdns.org
+    port: 6400
+    sysop: cybette
+    established: 2017
+    description: |
+      Telnet BBS focused on 8-bit scene art and door games. Strong ANSI
+      art display, well-curated SysOp message bases. Friendly to C64U
+      users specifically.
+    terminal_modes: [ANSI-wide, VT102-wide]
+    baud_recommended: 38400
+    tags: [ansi-art, scene, door-games, chat]
+    ansi_style: ansi
+    country: US
+    submitted_by: bvterm-seed
+
+  - slug: heatwave
+    name: Heatwave BBS
+    host: heatwave.ddns.net
+    port: 9640
+    sysop: nightowl
+    established: 2018
+    description: |
+      Modern retro BBS. ANSI-rich displays, message networks, and a
+      casual community vibe. Works smoothly with 38400-baud SwiftLink
+      configurations on the C64U.
+    terminal_modes: [ANSI-wide, ANSI-40]
+    baud_recommended: 38400
+    tags: [chat, door-games, message-networks]
+    ansi_style: ansi
+    country: US
+    submitted_by: bvterm-seed
+
+  - slug: amigacity
+    name: Amigacity / 1200 Baud Underground
+    host: amigacity.xyz
+    port: 8023
+    sysop: ricardobastos
+    established: 2020
+    description: |
+      Brazilian scene-art BBS — primarily Amiga but with active C64
+      sub-boards. Excellent ANSI art collections. Slightly slower
+      response from US — but worth the dial for the art alone.
+    terminal_modes: [ANSI-wide, VT102]
+    baud_recommended: 9600
+    tags: [ansi-art, scene, international]
+    ansi_style: ansi
+    country: BR
+    submitted_by: bvterm-seed
+
+  - slug: phoenix
+    name: Phoenix Lair
+    host: phoenix.bnbbs.net
+    port: 9999
+    sysop: phoenix
+    established: 2019
+    description: |
+      Multi-system BBS supporting various retro platforms. Active
+      door-game tournaments. Good test for high-baud terminal stacks
+      since the sysop runs modern hardware behind it.
+    terminal_modes: [ANSI-wide, VT102-wide]
+    baud_recommended: 38400
+    tags: [door-games, tournaments, chat]
+    ansi_style: ansi
+    country: US
+    submitted_by: bvterm-seed
+
+  - slug: blackflag
+    name: Black Flag BBS
+    host: blackflag.acid.org
+    port: 23
+    sysop: blackflag
+    established: 1994
+    description: |
+      Legendary ACiD-affiliated art-scene BBS, one of the longest-running
+      scene boards still online. ANSI/ASCII art archives going back to
+      the 90s. A pilgrimage site for anyone interested in BBS-era art.
+    terminal_modes: [ANSI-wide, VT102]
+    baud_recommended: 38400
+    tags: [scene, ansi-art, ascii-art, historic]
+    ansi_style: ansi
+    country: US
+    homepage: https://blackflag.acid.org
+    submitted_by: bvterm-seed
